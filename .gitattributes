@@ -1,0 +1,9 @@
+* text=auto
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.onnx binary
+*.png binary
+*.ico binary
+MaaAgentBinary/** binary

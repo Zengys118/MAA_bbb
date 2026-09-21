@@ -1,0 +1,27 @@
+# 本机和运行生成物
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+debug/
+development-notes/
+runs/
+*.log
+current-screen.png
+stop_*.png
+.offline-log/
+config/configs/
+config/device.json
+
+
+# 打包程序和本机运行时不进入源码仓库
+MFW.exe
+MFWUpdater/
+runtimes/
+PySide6/
+numpy/
+numpy.libs/
+PIL/
+maafw/
+*.dll
+*.pyd
