@@ -11,6 +11,9 @@ current-screen.png
 stop_*.png
 .offline-log/
 config/configs/
+config/config.json
+config/maa_option.json
+config/multi_config.json
 config/device.json
 
 
@@ -25,3 +28,24 @@ PIL/
 maafw/
 *.dll
 *.pyd
+
+# Bundled Python runtime dependencies copied by the release package
+backports/
+bcj/
+certifi/
+charset_normalizer/
+cryptography/
+Cryptodome/
+inflate64/
+psutil/
+pyppmd/
+shiboken6/
+
+# Release-only metadata and locally built test launchers
+/*.exe
+/file_list.txt
+/MFW_LICENSE
+/MFW_README*.md
+/乐土测试面板使用说明.txt
+/识宝小助手-乐土自动使用说明.md
+resource/Announcement/
