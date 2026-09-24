@@ -1,4 +1,4 @@
-"""测试面板的短任务：识别、短按摇杆、重新识别；所有循环有时限。"""
+"""乐土关内移动辅助：识别门、控制摇杆并恢复视角。"""
 import json
 import time
 from types import SimpleNamespace

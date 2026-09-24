@@ -1,15 +1,6 @@
 {
     "task": [
         {
-            "name": "往世乐土-深层自动-MuMu",
-            "label": "往世乐土 · 开发测试（MuMu）",
-            "controller": ["安卓端"],
-            "default_check": false,
-            "entry": "乐土自动-执行",
-            "group": ["周常"],
-            "description": "适配窈窕谍影·华裳路线。沿用游戏当前难度、装备和助战；自动选择刻印、移动进门和购买商店刻印。完成第17层后任选英桀门进入并退出结算。可从舰桥、乐土大厅或当前关卡继续。停止任务会松开摇杆，异常时保存现场到 development-notes/runs。"
-        },
-        {
             "name": "往世乐土",
             "default_check": false,
             "label": "往世乐土",

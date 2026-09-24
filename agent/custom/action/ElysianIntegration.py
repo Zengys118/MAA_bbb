@@ -88,9 +88,46 @@ class ElysianConfigure(CustomAction):
             # 乐土大厅、深层序列和战前配置；一旦识别到第一层初始刻印页，
             # 不再继续执行原版的刻印/领奖/跳转节点，避免同一帧与自循环抢输入。
             patch["往事乐土-乐土开始了"] = {"next": ["乐土关内-接管"]}
+            # 任务中断或小助手重启后，画面可能已经停在深层序列的
+            # 战前增益页。原入口链只从“已进入往世乐土”继续向下，
+            # 这时会漏掉增益节点并反复回到“启动并进入游戏”。
+            # 将深层序列识别加入入口恢复分支，沿用原版增益选择流程。
+            patch["往世乐土-开始任务层"] = {
+                "next": [
+                    "往世乐土-总任务层",
+                    "往世乐土-已进入往世乐土",
+                    "往世乐土-已进入三位导航界面",
+                    "往世乐土-已进入深层序列",
+                    "乐土关内-接管",
+                    "[JumpBack]启动并进入游戏",
+                ]
+            }
+            # MuMu 当前 1600x900 显示映射到 1280x720 逻辑分辨率时，
+            # 滚动条到底部的色块实际只有约 16 个连续像素；原版要求 30，
+            # 导致“已滑动至最下方”永远识别失败并无限向下滑动。
+            # 只覆盖本次安卓自定义任务，桌面端仍使用原始阈值。
+            patch["往世乐土-增益选择-已滑动至最下方"] = {
+                "recognition": {
+                    "type": "ColorMatch",
+                    "param": {
+                        "roi": [1230, 509, 12, 20],
+                        "upper": [159, 131, 86],
+                        "lower": [159, 131, 86],
+                        "count": 12,
+                        "connected": True,
+                    },
+                }
+            }
             # 入场及领奖流程复用原识别节点，安卓不发送 PC 的 Alt/Space/Esc。
             patch.update({
-                "往世乐土-战斗-对话ing": {"action": {"type": "Click", "param": {"target": [640, 650, 1, 1]}}},
+                # MuMu 上“跳过”图标由原节点识别为 [1182, 15, 36, 29]；
+                # 直接点击其中心，避免 ClickKey/空格在对话阶段失效。
+                "往世乐土-等爱莉说话": {
+                    "action": {"type": "Click", "param": {"target": [1200, 30, 1, 1]}}
+                },
+                "往世乐土-战斗-对话ing": {
+                    "action": {"type": "Click", "param": {"target": [1200, 30, 1, 1]}}
+                },
                 "往世乐土-打完领奖-按住alt后点击进入-按住": {"action": "DoNothing"},
                 "往世乐土-打完领奖-已进入领奖入口": {"action": "DoNothing"},
                 "往世乐土-打完领奖-重置鼠标状态": {"action": "DoNothing"},
@@ -126,12 +163,21 @@ class ElysianInStage(CustomRecognition):
             initial = (initial_button or initial_title) and (
                 "祝福" in text or "真我" in text or "专属" in text or "核心" in text
             )
+            # “真我定制”模板在爱莉对话的背景上偶尔会提前命中。
+            # 对话仍属于入场流程，接管器应先点右上角跳过，再等待
+            # 初始专属刻印页面，而不是把这次识别当成失败退出。
+            dialogue = (
+                any("跳过" in r["text"] for r in rows if r["box"][1] < 100)
+                and "历史" in text
+                and ("爱莉希雅" in text or "开场白" in text)
+            )
             floor = read_floor(rows)
             hud = context.run_recognition("角色战斗-生命HUD", argv.image) if floor else None
             resumed = bool(floor and hud and hud.hit)
             paused = all(word in text for word in ("战况报告", "状态列表", "往世乐土"))
-            if initial or resumed or paused:
-                return CustomRecognition.AnalyzeResult(box=[0, 0, 1, 1], detail={"scene": "initial_signet" if initial else "resume"})
+            if initial or resumed or paused or dialogue:
+                scene = "initial_signet" if initial else "dialogue" if dialogue else "resume"
+                return CustomRecognition.AnalyzeResult(box=[0, 0, 1, 1], detail={"scene": scene})
             return None
         except Exception as exc:
             print(f"乐土关内交接识别失败：{exc}", flush=True)

@@ -169,7 +169,6 @@
     ],
     "import": [
         "tasks/游戏启动.json",
-        "tasks/工具/测试.json",
         "tasks/工具/攻略.json",
         "tasks/工具/过剧情.json",
         "tasks/工具/克莱茵打灰.json",
@@ -424,10 +423,6 @@
                 },
                 {
                     "name": "自动点击剧情跳过",
-                    "enabled": false
-                },
-                {
-                    "name": "只是测试",
                     "enabled": false
                 }
             ]
