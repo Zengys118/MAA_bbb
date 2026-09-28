@@ -1,0 +1,14 @@
+{
+    "curr_config_id": "c_1c41b9d8bfce4ff2886d0a9db5355b44",
+    "config_list": [
+        "c_87103e1c5a5d4751a65d10fe6f990366",
+        "c_715a6c57a38c4768922439b37ccb28c3",
+        "c_1c41b9d8bfce4ff2886d0a9db5355b44"
+    ],
+    "bundle": {
+        "MAA_bbb": {
+            "name": "MAA_bbb",
+            "path": "./"
+        }
+    }
+}

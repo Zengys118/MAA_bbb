@@ -1,0 +1,127 @@
+{
+    "General": {
+        "cdk": "",
+        "announcement": "{\"v\": 3, \"sig\": \"ef65b35c6d262b976c1d6854877899bab58f754e486bb0f114f6bfc30c78db6b\", \"welcome_md5\": \"4623a4cf80d61591d6743bd84359cc34\"}",
+        "auto_minimize_on_startup": false,
+        "http_proxy": "",
+        "minimize_to_tray_on_minimize_windows": false,
+        "proxy": 0,
+        "run_after_startup": false,
+        "run_after_startup_arg": false,
+        "socks5_proxy": "",
+        "special_task_tutorial_shown": true
+    },
+    "Notice": {
+        "DingTalk_secret": "",
+        "DingTalk_status": false,
+        "DingTalk_url": "",
+        "Gotify_priority": "0",
+        "Gotify_status": false,
+        "Gotify_token": "",
+        "Gotify_url": "",
+        "Lark_secret": "",
+        "Lark_status": false,
+        "Lark_url": "",
+        "QYWX_key": "",
+        "QYWX_status": false,
+        "Qmsg_key": "",
+        "Qmsg_robot_qq": "",
+        "Qmsg_sever": "",
+        "Qmsg_status": false,
+        "Qmsg_uesr_qq": "",
+        "SMTP_password": "",
+        "SMTP_receive_mail": "",
+        "SMTP_send_mail": "",
+        "SMTP_sever_address": "",
+        "SMTP_sever_port": "25",
+        "SMTP_status": false,
+        "SMTP_used_ssl": false,
+        "SMTP_uesr_name": "",
+        "Webhook_status": false,
+        "Webhook_token": "",
+        "Webhook_url": "",
+        "WxPusher_SPT_token": "",
+        "WxPush_status": false,
+        "notice_send_format": "plain",
+        "notice_send_screenshot": false,
+        "when_connect_failed": true,
+        "when_connect_success": false,
+        "when_flow_started": false,
+        "when_post_task": true,
+        "when_start_up": false,
+        "when_task_failed": true,
+        "when_task_finished": false,
+        "when_task_success": false,
+        "when_task_timeout": true
+    },
+    "Security": {
+        "acknowledged_resource_runs": "[\"fa9048b4128689490e70b5c2bb6ca3d517e3f00769d4f5a4076391b709d45f29\"]"
+    },
+    "Update": {
+        "auto_update": true,
+        "CdkExpiredTime": -1,
+        "force_github": false,
+        "github_api_key": "",
+        "LatestUpdateVersion": "v1.13.4",
+        "resource_update_channel": 2
+    },
+    "Personalization": {
+        "background_image_opacity": 10,
+        "background_image_path": "",
+        "home_cover_image_path": "dashboard.png",
+        "show_advanced_startup_options": false
+    },
+    "Material": {
+        "AcrylicBlurRadius": 15
+    },
+    "Bundle": {
+        "bundle_auto_update": false
+    },
+    "MainWindow": {
+        "DpiScale": "Auto",
+        "Language": "CHINESE_SIMPLIFIED",
+        "LanguageAutoDetected": true,
+        "last_active_page": "task",
+        "LastWindowGeometry": "",
+        "MicaEnabled": true,
+        "remember_window_geometry": false,
+        "startup_page": "home"
+    },
+    "Task": {
+        "enable_gpu_acceleration": true,
+        "monitor_capture_fps": 30,
+        "monitor_recognition_roi_enabled": true,
+        "task_interface_panel_layout": "0.333333,0.333333,0.333333"
+    },
+    "Dev": {
+        "enable_test_interface_page": false
+    },
+    "QFluentWidgets": {
+        "FontFamilies": [
+            "Segoe UI",
+            "Microsoft YaHei",
+            "PingFang SC"
+        ],
+        "ThemeColor": "#ff009faa",
+        "ThemeMode": "Auto"
+    },
+    "Runtime": {
+        "is_admin": false
+    },
+    "Log": {
+        "log_max_images": 25,
+        "log_zip_include_images": false
+    },
+    "Compatibility": {
+        "multi_instance_enabled": false,
+        "multi_resource_adaptation": false,
+        "save_screenshot": false
+    },
+    "Shortcuts": {
+        "start_task_shortcut": "Ctrl+F1",
+        "stop_task_shortcut": "Alt+F1"
+    },
+    "Privacy": {
+        "telemetry_enabled": true
+    }
+}
