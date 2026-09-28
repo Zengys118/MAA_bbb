@@ -1,8 +1,0 @@
-发布包说明
-
-1. 解压整个文件夹，不要只拿出 MFW.exe。
-2. 复制 config/config.example.json 为 config/config.json。
-3. 按自己的 MuMu 模拟器修改 adb_path 和 address。
-4. 双击 MFW.exe 启动。
-
-本压缩包不包含开发者的个人设备配置、设备指纹、运行日志和本机调试记录。
