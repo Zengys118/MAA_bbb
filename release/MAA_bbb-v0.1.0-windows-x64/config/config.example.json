@@ -1,0 +1,9 @@
+{
+  "note": "复制为 config/config.json 后按本机 MAA 环境填写；不要提交真实设备地址。",
+  "controller": {
+    "type": "adb",
+    "adb_path": "path/to/adb.exe",
+    "address": "127.0.0.1:16384"
+  }
+}
+
