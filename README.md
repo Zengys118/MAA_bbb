@@ -1,5 +1,7 @@
 # MAA_bbb
 
+# 新更新已经同步到淼九清佬的仓库，不必看这里了，仓库地址[miaojiuqing](https://github.com/miaojiuqing/MAA_bbb)
+
 基于 **miaojiuqing/Maa_bbb** 修改的《崩坏3》自动化小助手，由 **MaaFramework** 驱动。
 
 主要是自己在原项目基础上继续折腾，目前重点增加和完善了 **往世乐土自动流程**。
